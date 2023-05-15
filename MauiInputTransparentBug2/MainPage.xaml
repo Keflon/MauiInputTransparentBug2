@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiInputTransparentBug2.MainPage">
+
+    <Grid RowDefinitions="*,*,*,*,*" VerticalOptions="FillAndExpand">
+
+        <Label  Grid.Row="1"
+            IsVisible="{Binding IsToggled, Source={x:Reference theSwitch1}}"
+            InputTransparent="{Binding IsToggled, Source={x:Reference theSwitch1}}"
+            Text="(A) Switch1 is on. InputTransparent is databound."/>
+
+        <Label  Grid.Row="2"
+            IsVisible="{Binding IsToggled, Source={x:Reference theSwitch2}}"
+            InputTransparent="True"
+            Text="(B) Switch2 is on. InputTransparent is True."/>
+
+        <Label  Grid.Row="3"
+            IsVisible="{Binding IsToggled, Source={x:Reference theSwitch2}}"
+               InputTransparent="{Binding IsToggled, Source={x:Reference theSwitch2}}"
+            Text="(C) Switch2 is on. InputTransparent is databound."/>
+
+        <HorizontalStackLayout Grid.Row="4">
+            <Label Text="Switch1" Margin="0,5,50,5"/>
+            <Switch x:Name="theSwitch1" IsToggled="True"/>
+
+            <Label Text="Switch2" Margin="0,5,50,5"/>
+            <Switch x:Name="theSwitch2" IsToggled="False"/>
+        </HorizontalStackLayout>
+
+    </Grid>
+
+
+</ContentPage>
