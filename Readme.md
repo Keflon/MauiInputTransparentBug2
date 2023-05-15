@@ -1,6 +1,6 @@
 # Android bug
 
-## InputTransparent adversely affects position or visibility of Labels. 
+## InputTransparent adversely affects position or visibility of Labels. . MAUI bug [#15090](https://github.com/dotnet/maui/issues/15090)
 
 On Android, setting `IsTransparent` to `True` causes a Label to either never be visible, or to be drawn in the wrong place when `IsVisible` is `False`. 
 ##
